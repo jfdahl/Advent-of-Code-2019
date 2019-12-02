@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-'''
+
 --- Day 1: The Tyranny of the Rocket Equation ---
 
 Santa has become stranded at the edge of the Solar System while delivering presents to other planets! To accurately calculate his position in space, safely align his warp drive, and return to Earth in time to save Christmas, he needs you to bring him measurements from fifty stars.
@@ -36,44 +35,3 @@ So, for each module mass, calculate its fuel and add it to the total. Then, trea
     The fuel required by a module of mass 100756 and its fuel is: 33583 + 11192 + 3728 + 1240 + 411 + 135 + 43 + 12 + 2 = 50346.
 
 What is the sum of the fuel requirements for all of the modules on your spacecraft when also taking into account the mass of the added fuel? (Calculate the fuel requirements for each module separately, then add them all up at the end.)
-
-'''
-import math
-
-def get_input(input_file):
-    with open(input_file, 'r') as fh:
-        rows = fh.readlines()
-    return rows
-
-
-def how_much_fuel(mass):
-    return math.floor(int(mass) / 3) - 2
-
-day01_input = get_input('input01.txt')
-
-def part1(modules):
-    amount_of_fuel = 0
-
-    for module in modules:
-        amount_of_fuel += how_much_fuel(module)
-
-    return amount_of_fuel
-
-answer1 = part1(day01_input) # 3429947
-print(answer1)
-
-def part2(modules):
-    amount_of_fuel = 0
-
-    for module in modules:
-        module_fuel = how_much_fuel(module)
-        module_fuel_fuel = how_much_fuel(module_fuel)
-        while module_fuel_fuel > 0:
-            module_fuel += module_fuel_fuel
-            module_fuel_fuel = how_much_fuel(module_fuel_fuel)
-        amount_of_fuel += module_fuel
-
-    return amount_of_fuel
-
-answer2 = part2(day01_input)    #5142043
-print(answer2)
