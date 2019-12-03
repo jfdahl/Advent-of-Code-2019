@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-
+#############
+# Setup
+#############
 # Get the input
 try:
     input_file = 'input.txt'
@@ -9,7 +11,9 @@ try:
 except FileNotFoundError:
     exit(f'The input file was not found: {input_file}')
 
-# Define part 1 and part 2 code
+#############
+# Part 1
+#############
 def part1(data):
     result = 0
 
@@ -18,6 +22,13 @@ def part1(data):
 
     return result
 
+answer1 = part1(rows)
+print(answer1)
+
+
+#############
+# Part 2
+#############
 def part2(data):
     result = 0
 
@@ -25,11 +36,6 @@ def part2(data):
         pass # Do something
 
     return result
-
-
-# Execute part 1 and part 2 code
-answer1 = part1(rows)
-print(answer1)
 
 answer2 = part2(rows)
 print(answer2)
