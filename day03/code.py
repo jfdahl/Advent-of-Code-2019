@@ -11,7 +11,7 @@ except FileNotFoundError:
 
    
 def step(position, direction):
-    '''Given a list of coordinates and a direction,
+    '''Given a pair of coordinates and a direction,
     determine the coordinates of the next step'''
     if direction == 'R':
         position[0] += 1
