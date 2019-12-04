@@ -46,7 +46,7 @@ def calculate_distance(position):
 
 def closest_intersection(intersections):
     intersection = min([(calculate_distance(x), x) for x in intersections])
-    print(intersection[0])
+    return intersection[0]
 
 
 # Define part 1 and part 2 code
@@ -60,27 +60,27 @@ def part1(data):
     set2 = set(wire2_positions)
 
     intersections = list(set1.intersection(set2))
-    print(intersections)
+    # print(f'Intersections: {intersections}')
 
-    closest_intersection(intersections)
+    print(f'Closest intersection: {closest_intersection(intersections)}')
     return None
 
-# # Test 0 = 6
+# Test 0 = 6
 # wire1 = 'R8,U5,L5,D3'.split(',')
 # wire2 = 'U7,R6,D4,L4'.split(',')
 # part1([wire1, wire2])
 
-# # Test 1 = 159
+# Test 1 = 159
 # wire1 = 'R75,D30,R83,U83,L12,D49,R71,U7,L72'.split(',')
 # wire2 = 'U62,R66,U55,R34,D71,R55,D58,R83'.split(',')
 # part1([wire1, wire2])
 
-# # Test 2 = 135
+# Test 2 = 135
 # wire1 = 'R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51'.split(',')
 # wire2 = 'U98,R91,D20,R16,D67,R40,U7,R15,U6,R7'.split(',')
 # part1([wire1, wire2])
 
-# part1(data)
+part1(data)
 
 
 def part2(data):
@@ -98,23 +98,23 @@ def part2(data):
         dist1 = wire1_positions.index(intersection) + 1 # Correct for a zero-based list
         dist2 = wire2_positions.index(intersection) + 1 # Correct for a zero-based list
         distances.append(dist1 + dist2)
-    print(min(distances))
+    print(f'First intersection distance: {min(distances)}')
     return None
 
 
 # Test 0 = 30
-wire1 = 'R8,U5,L5,D3'.split(',')
-wire2 = 'U7,R6,D4,L4'.split(',')
-part2([wire1, wire2])
+# wire1 = 'R8,U5,L5,D3'.split(',')
+# wire2 = 'U7,R6,D4,L4'.split(',')
+# part2([wire1, wire2])
 
 # Test 1 = 610
-wire1 = 'R75,D30,R83,U83,L12,D49,R71,U7,L72'.split(',')
-wire2 = 'U62,R66,U55,R34,D71,R55,D58,R83'.split(',')
-part2([wire1, wire2])
+# wire1 = 'R75,D30,R83,U83,L12,D49,R71,U7,L72'.split(',')
+# wire2 = 'U62,R66,U55,R34,D71,R55,D58,R83'.split(',')
+# part2([wire1, wire2])
 
 # Test 2 = 410
-wire1 = 'R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51'.split(',')
-wire2 = 'U98,R91,D20,R16,D67,R40,U7,R15,U6,R7'.split(',')
-part2([wire1, wire2])
+# wire1 = 'R98,U47,R26,D63,R33,U87,L62,D20,R33,U53,R51'.split(',')
+# wire2 = 'U98,R91,D20,R16,D67,R40,U7,R15,U6,R7'.split(',')
+# part2([wire1, wire2])
 
 part2(data)
