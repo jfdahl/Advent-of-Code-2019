@@ -57,10 +57,10 @@ assert part1([1,1,1,4,99,5,6,0,99]) == [30,1,1,4,2,5,6,0,99]
 tmp = rows[:]
 tmp[1] = 12
 tmp[2] = 2
-assert part1(tmp)[0] == 3166704
+print(f'Part 1: {part1(tmp)[0]}')
 
 
 # Execute part 2 (Copies are made in the function)
 answer2 = part2(rows)
 if answer2[0] == 19690720:
-    print(100 * answer2[1] + answer2[2])
+    print(f'Part 2: {100 * answer2[1] + answer2[2]}')
