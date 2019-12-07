@@ -129,4 +129,4 @@ def part2(data: list) -> None:
     print(f'Final Op Code: {op}\nOutput: {output}')
 
 print(data[:20])
-part2(data)
+part2(data) #16694270
